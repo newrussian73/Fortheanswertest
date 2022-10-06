@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
 import unittest
 
 
@@ -23,7 +22,6 @@ def auth(link):
         passwordadmin.send_keys('Blokpost1976!')
         buttonlogin=browser.find_element(By.CSS_SELECTOR, "button.btn")
         buttonlogin.click()
-        time.sleep(5)
     url=browser.current_url
     return url
 class testauth(unittest.TestCase):
