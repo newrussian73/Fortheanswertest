@@ -1,11 +1,11 @@
-
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import pytest
+import unittest
+
 
 def fill_form(link):
-    browser=webdriver.Chrome()
+    browser = webdriver.Chrome()
     browser.get(link)
     input1 = browser.find_element(By.XPATH, '//input[@placeholder="Input your first name"]')
     input1.send_keys("test")
@@ -19,11 +19,17 @@ def fill_form(link):
     welcome_text_elt = browser.find_element(By.TAG_NAME, "h1")
     browser.quit()
     return welcome_text_elt.text
-class TestRun:
-    def test_Reg1(self):
-        assert fill_form("http://suninjuly.github.io/registration1.html")=="Congratulations! You have successfully registered!",'test failed'
-    def test_Reg2(self):
-        assert fill_form("http://suninjuly.github.io/registration2.html")=="Congratulations! You have successfully registered!",'test failed'
-if __name__=='__main__':
-    pytest.main()
 
+
+class TestRun(unittest.TestCase):
+    def test_Reg1(self):
+        self.assertEqual(fill_form(
+            "http://suninjuly.github.io/registration1.html") == "Congratulations! You have successfully registered!", "test failed")
+
+    def test_Reg2(self):
+        self.assertEqual(fill_form(
+            "http://suninjuly.github.io/registration2.html") == "Congratulations! You have successfully registered!", 'test failed')
+
+
+if __name__ == '__main__':
+    unittest.main()
