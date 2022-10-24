@@ -15,7 +15,7 @@ try:
     input3=browser.find_element(By.NAME,'email')
     input3.send_keys('qwpeigne')
     current_dir=os.path.abspath(os.path.dirname(__file__))
-    file_path=os.path.join(current_dir,'для вставки.txt')
+    file_path=os.path.join(current_dir, 'для вставки.txt')
     vstavka=browser.find_element(By.NAME,'file')
     vstavka.send_keys(file_path)
     button=browser.find_element(By.CSS_SELECTOR,'button.btn')

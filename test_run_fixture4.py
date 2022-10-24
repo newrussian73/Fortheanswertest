@@ -1,18 +1,9 @@
 #выполнение для каждого теста autouse=True
 import pytest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 link = "http://selenium1py.pythonanywhere.com/"
 
-
-@pytest.fixture
-def browser():
-    print("\nstart browser for test..")
-    browser = webdriver.Chrome()
-    yield browser
-    print("\nquit browser..")
-    browser.quit()
 
 @pytest.fixture(autouse=True)
 def prepare_data():
