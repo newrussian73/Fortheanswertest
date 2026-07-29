@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Альбом — шаблон фотоальбома</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__media" aria-hidden="true">
+      <img src="assets/cover.png" alt="" class="hero__image" />
+      <div class="hero__veil"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="brand">Альбом</p>
+      <h1 class="hero__title">Летние кадры</h1>
+      <p class="hero__lead">Шаблон фотоальбома: обложка, развороты и подписи к снимкам.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#spreads">Открыть альбом</a>
+        <a class="btn btn--ghost" href="#how">Как заменить фото</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" id="intro">
+      <p class="eyebrow">Разворот 01</p>
+      <h2>История в нескольких кадрах</h2>
+      <p class="section-lead">Один герой, одна тропинка, несколько мгновений — вставьте свои фото вместо примеров.</p>
+    </section>
+
+    <section class="spreads" id="spreads">
+      <article class="spread spread--featured">
+        <figure class="photo photo--wide">
+          <img src="assets/page-01.png" alt="Персонаж идёт по садовой тропинке" data-full="assets/page-01.png" />
+          <figcaption>
+            <span class="photo__label">01</span>
+            <span>Начало пути</span>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="spread spread--pair">
+        <figure class="photo">
+          <img src="assets/page-02.png" alt="Шаг вперёд по тропинке" data-full="assets/page-02.png" />
+          <figcaption>
+            <span class="photo__label">02</span>
+            <span>Шаг вперёд</span>
+          </figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="assets/portrait.png" alt="Портрет персонажа на белом фоне" data-full="assets/portrait.png" />
+          <figcaption>
+            <span class="photo__label">03</span>
+            <span>Портрет</span>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="spread spread--pair spread--reverse">
+        <figure class="photo">
+          <img src="assets/memory.png" alt="Тёплый летний снимок" data-full="assets/memory.png" />
+          <figcaption>
+            <span class="photo__label">04</span>
+            <span>Воспоминание</span>
+          </figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="assets/page-03.png" alt="Глубже в сад" data-full="assets/page-03.png" />
+          <figcaption>
+            <span class="photo__label">05</span>
+            <span>Глубже в сад</span>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="spread spread--featured">
+        <figure class="photo photo--wide">
+          <img src="assets/page-04.png" alt="У загадочных кустов" data-full="assets/page-04.png" />
+          <figcaption>
+            <span class="photo__label">06</span>
+            <span>У загадочных теней</span>
+          </figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <section class="how" id="how">
+      <p class="eyebrow">Шаблон</p>
+      <h2>Как подставить свои фото</h2>
+      <ol class="how__list">
+        <li>Положите изображения в папку <code>photo-album/assets/</code></li>
+        <li>Замените файлы <code>cover.png</code>, <code>page-01.png</code> … или обновите пути в <code>index.html</code></li>
+        <li>Поменяйте подписи в блоках <code>figcaption</code></li>
+        <li>Измените название альбома в блоке <code class="brand-inline">Альбом</code> и заголовок «Летние кадры»</li>
+      </ol>
+      <p class="how__note">Рекомендуемый размер обложки: 1920×1080. Для портретов удобнее квадрат или 3:4.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="brand brand--footer">Альбом</p>
+    <p>Шаблон фотоальбома · готово к своим снимкам</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox__close" aria-label="Закрыть">×</button>
+    <img class="lightbox__image" alt="" />
+  </div>
+
+  <script src="js/album.js"></script>
+</body>
+</html>
