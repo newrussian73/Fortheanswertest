@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Польза овощей — презентация</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @page {
+      size: 338.67mm 190.5mm;
+      margin: 0;
+    }
+
+    :root {
+      --green-deep: #1f3d2f;
+      --green: #2f6b4f;
+      --green-soft: #e7f0ea;
+      --sand: #f7f4ec;
+      --ink: #1c2420;
+      --muted: #5b6a62;
+      --accent: #c9a227;
+      --leaf: #7cb342;
+      --card: rgba(247, 244, 236, 0.92);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 1280px;
+      background: #111;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .slide:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .veil {
+      position: absolute;
+      inset: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      padding: 56px 64px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c8e6c9;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 72px;
+      line-height: 1.02;
+      font-weight: 700;
+      color: #f7f4ec;
+      max-width: 10ch;
+      margin-bottom: 22px;
+    }
+
+    .lead {
+      font-size: 22px;
+      line-height: 1.45;
+      color: rgba(247, 244, 236, 0.9);
+      max-width: 34ch;
+      font-weight: 500;
+    }
+
+    .footer-meta {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(247, 244, 236, 0.75);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .panel {
+      width: 560px;
+      background: var(--card);
+      border: 1px solid rgba(31, 61, 47, 0.12);
+      padding: 36px 40px;
+      box-shadow: 0 18px 50px rgba(20, 40, 28, 0.22);
+    }
+
+    .panel h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 40px;
+      line-height: 1.1;
+      color: var(--green-deep);
+      margin-bottom: 10px;
+    }
+
+    .panel .sub {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .list li {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--green-deep);
+      margin-bottom: 2px;
+    }
+
+    .item-text {
+      font-size: 14.5px;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    .slide-1 .veil {
+      background:
+        linear-gradient(90deg, rgba(18, 36, 26, 0.82) 0%, rgba(18, 36, 26, 0.55) 46%, rgba(18, 36, 26, 0.18) 100%),
+        linear-gradient(180deg, rgba(18, 36, 26, 0.15), rgba(18, 36, 26, 0.55));
+    }
+
+    .slide-2 .veil,
+    .slide-3 .veil {
+      background:
+        linear-gradient(90deg, rgba(247, 244, 236, 0.08) 0%, rgba(20, 36, 28, 0.28) 38%, rgba(20, 36, 28, 0.55) 100%);
+    }
+
+    .slide-2 .content,
+    .slide-3 .content {
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .slide-2 .footer-meta,
+    .slide-3 .footer-meta {
+      position: absolute;
+      left: 64px;
+      right: 64px;
+      bottom: 36px;
+      width: auto;
+      color: rgba(247, 244, 236, 0.85);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(47, 107, 79, 0.12);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Слайд 1 -->
+  <section class="slide slide-1">
+    <img class="bg" src="assets/slide1.png" alt="" />
+    <div class="veil"></div>
+    <div class="content">
+      <p class="eyebrow">Здоровье · Питание · Энергия</p>
+      <h1>Польза овощей</h1>
+      <p class="lead">Простая ежедневная привычка, которая поддерживает энергию, иммунитет и самочувствие.</p>
+      <div class="footer-meta">
+        <span>Мини-презентация · 3 слайда</span>
+        <span>01 / 03</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Слайд 2 -->
+  <section class="slide slide-2">
+    <img class="bg" src="assets/slide2.png" alt="" />
+    <div class="veil"></div>
+    <div class="content">
+      <div class="panel">
+        <div class="badge">Почему это важно</div>
+        <h2>Что дают овощи организму</h2>
+        <p class="sub">Ключевые эффекты при регулярном употреблении</p>
+        <ul class="list">
+          <li>
+            <div class="num">01</div>
+            <div>
+              <div class="item-title">Витамины и минералы</div>
+              <div class="item-text">A, C, K, фолат, калий и магний — база для обмена веществ и тонуса.</div>
+            </div>
+          </li>
+          <li>
+            <div class="num">02</div>
+            <div>
+              <div class="item-title">Клетчатка для пищеварения</div>
+              <div class="item-text">Поддерживает сытость, работу кишечника и стабильный уровень энергии.</div>
+            </div>
+          </li>
+          <li>
+            <div class="num">03</div>
+            <div>
+              <div class="item-title">Антиоксидантная защита</div>
+              <div class="item-text">Помогают снижать воспаление и поддерживать иммунитет.</div>
+            </div>
+          </li>
+          <li>
+            <div class="num">04</div>
+            <div>
+              <div class="item-title">Мало калорий — много пользы</div>
+              <div class="item-text">Удобны для баланса рациона без ощущения ограничений.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-meta">
+        <span>Польза овощей</span>
+        <span>02 / 03</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Слайд 3 -->
+  <section class="slide slide-3">
+    <img class="bg" src="assets/slide3.png" alt="" />
+    <div class="veil"></div>
+    <div class="content">
+      <div class="panel">
+        <div class="badge">Практика</div>
+        <h2>Как есть овощи каждый день</h2>
+        <p class="sub">Простые шаги, которые легко удержать</p>
+        <ul class="list">
+          <li>
+            <div class="num">01</div>
+            <div>
+              <div class="item-title">Половина тарелки — овощи</div>
+              <div class="item-text">На обеде и ужине делайте овощи основой, а не гарниром «на сдачу».</div>
+            </div>
+          </li>
+          <li>
+            <div class="num">02</div>
+            <div>
+              <div class="item-title">Чередуйте цвета</div>
+              <div class="item-text">Зелёные, красные, оранжевые, фиолетовые — разный цвет = разный набор веществ.</div>
+            </div>
+          </li>
+          <li>
+            <div class="num">03</div>
+            <div>
+              <div class="item-title">Готовьте по-разному</div>
+              <div class="item-text">Свежие, запечённые, на пару, в супах — так проще не надоесть.</div>
+            </div>
+          </li>
+          <li>
+            <div class="num">04</div>
+            <div>
+              <div class="item-title">Держите готовый запас</div>
+              <div class="item-text">Нарезанные овощи и заготовки на 2–3 дня повышают шанс съесть норму.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-meta">
+        <span>Польза овощей</span>
+        <span>03 / 03</span>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
