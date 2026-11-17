@@ -1,0 +1,85 @@
+{
+  "project": {
+    "title": "Светлана. Письмо из будущего",
+    "status": "scaffold_only",
+    "editing_started": false
+  },
+  "timeline": {
+    "duration_seconds": 510,
+    "duration_timecode": "00:08:30:00",
+    "resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "aspect_ratio": "16:9",
+    "frame_rate": 25
+  },
+  "delivery": {
+    "container": "MP4",
+    "video_codec": "H.264"
+  },
+  "source_policy": {
+    "use_only_provided_family_photos": true,
+    "do_not_generate_fictional_photos": true,
+    "preserve_original_files": true
+  },
+  "people": [
+    {
+      "name": "Светлана",
+      "role": "главная героиня"
+    },
+    {
+      "name": "Роза",
+      "role": "родитель"
+    },
+    {
+      "name": "Саша",
+      "role": "родитель"
+    },
+    {
+      "name": "Михаил",
+      "role": "муж, 31 год совместной жизни"
+    },
+    {
+      "name": "Алла",
+      "role": "дочь"
+    },
+    {
+      "name": "Владик",
+      "role": "зять"
+    },
+    {
+      "name": "Дима",
+      "role": "внук"
+    },
+    {
+      "name": "Марат",
+      "role": "брат"
+    },
+    {
+      "name": "Рая",
+      "role": "сестра"
+    },
+    {
+      "name": "Лена",
+      "role": "подруга"
+    },
+    {
+      "name": "Света",
+      "role": "подруга"
+    },
+    {
+      "name": "Аня",
+      "role": "подруга"
+    },
+    {
+      "name": "Татьяна",
+      "role": "сватья"
+    },
+    {
+      "name": "Валерий",
+      "role": "сват"
+    }
+  ],
+  "scenes": []
+}
