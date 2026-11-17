@@ -1,0 +1,9 @@
+# Семейные фотографии и звук не отправляются в репозиторий автоматически.
+assets/originals/*
+!assets/originals/.gitkeep
+assets/working/*
+!assets/working/.gitkeep
+audio/*
+!audio/.gitkeep
+exports/*
+!exports/.gitkeep
