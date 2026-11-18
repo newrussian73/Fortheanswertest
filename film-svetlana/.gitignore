@@ -7,3 +7,4 @@ audio/*
 !audio/.gitkeep
 exports/*
 !exports/.gitkeep
+.build/
