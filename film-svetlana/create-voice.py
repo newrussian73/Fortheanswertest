@@ -46,7 +46,7 @@ for number, paragraph in enumerate(paragraphs, start=1):
             str(segment),
         ]
     )
-    lines.append(f"file '{segment}'")
+    lines.append(f"file '{segment.resolve()}'")
 
 manifest.write_text("\n".join(lines) + "\n", encoding="utf-8")
 run(
