@@ -4,10 +4,17 @@
 from pathlib import Path
 import subprocess
 import sys
+import time
 
 
 def run(command: list[str]) -> None:
-    subprocess.run(command, check=True)
+    for attempt in range(3):
+        result = subprocess.run(command)
+        if result.returncode == 0:
+            return
+        if attempt == 2:
+            raise subprocess.CalledProcessError(result.returncode, command)
+        time.sleep(2 * (attempt + 1))
 
 
 input_path = Path(sys.argv[1])
@@ -16,7 +23,7 @@ work_dir = output_path.parent / "voice-segments"
 work_dir.mkdir(parents=True, exist_ok=True)
 
 paragraphs = [
-    paragraph.replace("\n", " ").strip()
+    paragraph.replace("\n", " ").replace("—", ",").strip()
     for paragraph in input_path.read_text(encoding="utf-8").split("\n\n")
     if paragraph.strip()
 ]
