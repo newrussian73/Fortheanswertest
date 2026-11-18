@@ -58,8 +58,7 @@ ffmpeg -y -hide_banner -loglevel error \
   -af "lowpass=f=1800,volume=0.24,afade=t=in:st=0:d=4,afade=t=out:st=502:d=8" \
   -c:a aac -b:a 192k "$BUILD/music.m4a"
 
-python3 -m edge_tts --voice ru-RU-SvetlanaNeural --rate=-18% \
-  --file "$ROOT/audio/voiceover-ru.txt" --write-media "$BUILD/voice.mp3"
+python3 "$ROOT/create-voice.py" "$ROOT/audio/voiceover-ru.txt" "$BUILD/voice.mp3"
 
 ffmpeg -y -hide_banner -loglevel error -i "$BUILD/music.m4a" -i "$BUILD/voice.mp3" \
   -filter_complex "[0:a]volume=0.55[music];[1:a]volume=1.25,adelay=4500|4500[voice];[music][voice]amix=inputs=2:duration=first:dropout_transition=2[a]" \
